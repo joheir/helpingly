@@ -2,7 +2,7 @@
   <div class="left">
   </div>
   <div class="right">
-    <h1><%= @user.email %></h1>
+    <h1><%= current_user.email %></h1>
     <h2 >Overview of my offers</h2>
     <div class="offers">
       <div class="col">
@@ -21,5 +21,6 @@
       </div>
     </div>
     </div>
+    <%= link_to "Create a new offer", new_offer_path %>
   </div>
 </div>
