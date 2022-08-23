@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = current_user # Does this work?
+
   end
 
   def edit
