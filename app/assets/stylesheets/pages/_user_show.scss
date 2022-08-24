@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.container-show {
+  display: flex;
+
+  .card {
+    width: 300px;
+    margin: 20px;
+  }
+}
+
+.cards {
+  // display: grid;
+}
+
+.left {
+  width: 500px;
+}
+
+.right {
+  position: relative;
+
+  .header {
+    text-align: center;
+  }
+}
+
+.container-cards {
+  // display: inline-grid;
+  justify-content: center;
+}
