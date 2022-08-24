@@ -1,11 +1,10 @@
 <div class = "container">
   <h1 class = "header">Create a new offer</h1>
+  <%= render "form", Offer: @offer %>
 
+  <br>
+</div>
 
-<%= render "form", Offer: @offer %>
-
-<br>
-
-<div>
-  <%= link_to "Back to Offers", offers_path %>
+<div class = "button">
+  <%= link_to "Back to Offers", offers_path, class:"btn btn-ghost" %>
 </div>
