@@ -1,15 +1,11 @@
 <div class = "container">
-
   <h1 class = "header">Create a new offer</h1>
 
-  <div class = "form">
-    <%= simple_form_for(@offer) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description, :input_html => {:rows => 10}%>
-      <%= f.input :hourly_rate %>
-      <%= f.input :location %>
-      <%= f.input :photo, as: :file%>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
+
+<%= render "form", Offer: @offer %>
+
+<br>
+
+<div>
+  <%= link_to "Back to Offers", offers_path %>
 </div>
