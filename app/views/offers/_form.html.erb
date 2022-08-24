@@ -1,0 +1,12 @@
+<%= simple_form_for(@offer) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :date, as: :date %>
+  <%= f.input :hourly_rate %>
+  <%= f.input :location %>
+  <%= f.input :photo, as: :file%>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
