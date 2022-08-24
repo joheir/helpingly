@@ -1,14 +1,17 @@
 
-<div class="container mt-3">
-   <div class="row">
-     <div class="col-6">
-        <%= render @offer %>
-     </div>
-   </div>
-     <div class="col-6">
-         <%= cl_image_tag(@offer.photo.key, width: 400, height: 300, crop: :fill) %>
-        <div class="mt-3 text-end">
-          <%= render "calendar" %>
+<div class="cont-detail">
+  <div class="offer-content">
+     <%= render @offer %>
+  </div>
+  <div class="img-details">
+         <div>
+           <%= cl_image_tag(@offer.photo.key, width: 600, height: 500, crop: :fill) %>
          </div>
-     </div>
+         <div class="book-btn">
+            <a href="#">Book</a>
+         </div>
+        <div class="">
+          <%= render "calendar" %>
+        </div>
+  </div>
 </div>
