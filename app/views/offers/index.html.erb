@@ -21,22 +21,23 @@
 
 <h1 class="offers-text">OFFERS</h1>
 
-<<<<<<< HEAD
 <div class="grid">
   <% @offers.each do |offer| %>
     <div class="g-col-md-4">
-      <div class="card-trip">
-        <% if offer.photo.attached? %>
-          <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2> <%= offer.title  %> </h2>
-            <p><%= offer.description  %> </p>
+      <%= link_to(offer_path(offer)) do %>
+        <div class="card-trip">
+          <% if offer.photo.attached? %>
+            <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2> <%= offer.title  %> </h2>
+              <p><%= offer.description  %> </p>
+            </div>
+            <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
           </div>
-          <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
         </div>
-      </div>
+      <% end %>
     </div>
   <%end%>
 </div>
