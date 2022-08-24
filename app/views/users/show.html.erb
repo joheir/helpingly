@@ -1,38 +1,27 @@
-<div class="grid">
-  <div class="g-col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+<div class="page">
+  <div class="left">
+    <p> <%= image_tag 'https://i.pinimg.com/550x/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg', class: "profile_pic" %> </p>
+    <i class="fa-solid fa-envelope"></i>
   </div>
-  <div class="g-col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+  <div class="right">
+    <div class="header">
+      <h1> <%= current_user.email %> </h1>
+      <h2> Overview of my offers </h2>
     </div>
-  </div>
-   <div class="g-col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="grid">
+      <% current_user.offers.each do |offer| %>
+      <div class="g-col-md-4">
+        <div class="card">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200)">
+            <i class="fa-solid fa-trash-can"></i>
+            <%= offer.title %>
+          </div>
+        </div>
       </div>
+      <% end %>
     </div>
-  </div>
-   <div class="g-col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+    <div class="button">
+      <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
     </div>
   </div>
 </div>
