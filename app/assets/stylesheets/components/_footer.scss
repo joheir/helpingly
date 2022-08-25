@@ -1,9 +1,9 @@
 .footer {
-    background: #212529;
+    background: $greenfour;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 60px;
     padding: 0px 50px;
     margin-top: 100vh;
     color: rgba(0,0,0,0.3);
@@ -25,7 +25,7 @@
     opacity: 1;
   }
   .footer .fa-heart {
-    color: #D23333;
+    color: pink;
   }
 
   .footer-copyright {

@@ -2,6 +2,9 @@
   <div class="left">
     <p> <%= image_tag 'https://i.pinimg.com/550x/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg', class: "profile_pic" %> </p>
     <i class="fa-solid fa-envelope"></i>
+    <div class="button">
+      <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
+    </div>
   </div>
   <div class="right">
     <div class="header">
@@ -11,24 +14,26 @@
     <div class="grid">
       <% current_user.offers.each do |offer| %>
         <div class="g-col-md-4">
-          <div class="card-trip">
-            <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-trip-infos">
-              <div class="card-info-section">
-                <div class="text-in-card">
-                  <h2> <%= offer.title  %> </h2>
-                  <p><%= offer.description.truncate(30, separator: ' ') %> </p>
+          <%= link_to(offer_path(offer), class: "card-link") do %>
+            <div class="card-trip">
+              <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
+              <div class="card-trip-infos">
+                <div class="card-info-section">
+                  <div class="text-in-card">
+                    <h2> <%= offer.title  %> </h2>
+                    <p><%= offer.description.truncate(30, separator: ' ') %> </p>
+                  </div>
+                  <%= link_to 'x', offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'delete-card' %>
                 </div>
-                <%= link_to 'x', offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'delete-card' %>
+                  <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
               </div>
-                <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-    <div class="button">
-      <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
+    <div class="bookings">
+      <h2> Overview of my Bookings </h2>
     </div>
   </div>
 </div>
