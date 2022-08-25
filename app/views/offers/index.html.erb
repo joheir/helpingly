@@ -46,8 +46,43 @@
 
 
 <div class="offers-section">
-<div class="filters">
-  
+<div class="filter">
+
+  <div class="home filter-icon">
+    <%= link_to request.params.merge(category: "Home") do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    <p>Home</p>
+  </div>
+
+  <div class="sports filter-icon">
+    <i class="fa-solid fa-basketball"></i>
+    <p>Sports</p>
+  </div>
+  <div class="pets filter-icon">
+    <i class="fa-solid fa-dog"></i>
+    <p>Pets</p>
+  </div>
+  <div class="education filter-icon">
+    <i class="fa-solid fa-book"></i>
+    <p>Education</p>
+  </div>
+  <div class="music filter-icon">
+    <i class="fa-solid fa-music"></i>
+    <p>Music</p>
+  </div>
+  <div class="art filter-icon">
+    <i class="fa-solid fa-paintbrush"></i>
+    <p>Art</p>
+  </div>
+  <div class="garden filter-icon">
+    <i class="fa-solid fa-tree"></i>
+    <p>Garden</p>
+  </div>
+  <div class="other filter-icon">
+    <i class="fa-solid fa-question"></i>
+    <p>Other</p>
+  </div>
 </div>
 
   <h1 class="offers-text">OFFERS</h1>

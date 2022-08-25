@@ -38,3 +38,22 @@
   height: 40px;
   margin: auto;
 }
+
+.filter{
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa-solid {
+  color: $greenfive;
+}
+
+.filter-icon {
+  text-align: center;
+
+  p {
+    font-size: 20px;
+    font-weight: bolder;
+    color: $greensix;
+  }
+}
