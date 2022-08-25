@@ -3,10 +3,10 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.all
     # The `geocoded` scope filters only offers with coordinates
-    @markers = @offers.geocoded.map do |flat|
+    @markers = @offers.geocoded.map do |offer|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: offer.latitude,
+        lng: offer.longitude
       }
     end
   end
@@ -27,6 +27,13 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @markers = Array(@offer).map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {offer: offer})
+      }
+    end
   end
 
   def destroy
@@ -38,6 +45,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :hourly_rate, :location, :photo)
+    params.require(:offer).permit(:title, :description, :hourly_rate, :location, :latitude, :longitude, :address, :photo)
   end
 end
