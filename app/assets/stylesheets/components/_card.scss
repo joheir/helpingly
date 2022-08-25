@@ -2,7 +2,6 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
   transition: transform .5s;
 
   &::after {
@@ -54,6 +53,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
 .card-link{

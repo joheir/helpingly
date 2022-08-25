@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_08_25_113213) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +49,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_113213) do
     t.bigint "offer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "hours"
+    t.boolean "accepted"
     t.index ["offer_id"], name: "index_appointments_on_offer_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
