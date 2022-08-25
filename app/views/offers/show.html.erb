@@ -10,7 +10,7 @@
         <%= @offer.description %>
       </h4>
       <div class="booking">
-        <a href="#">Book</a>
+        <%= link_to "Book", new_offer_appointment_path(@offer) %>
       </div>
       <hr class="border border-dark border-2 opacity-50" style="margin-top: 75px;">
     </div>
