@@ -11,7 +11,7 @@
 }
 
 .form-wrapper {
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 ion-icon {
@@ -24,4 +24,9 @@ ion-icon {
   text-align: center;
   text-decoration: none;
   margin-bottom: 100px;
+}
+
+.navbar {
+  background-color: $greenfive;
+  height: 50px;
 }
