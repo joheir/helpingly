@@ -32,7 +32,7 @@
           <div class="card-trip-infos">
             <div>
               <h2> <%= offer.title  %> </h2>
-              <p><%= offer.description  %> </p>
+              <p><%= offer.description.truncate(30, separator: ' ') %> </p>
             </div>
             <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
           </div>
@@ -41,6 +41,3 @@
     </div>
   <%end%>
 </div>
-
-
-
