@@ -17,8 +17,22 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def edit
+    @appointment = Appointment.find(params[:id])
+  end
+
+  def update
+    @appointment = Appointment.find(appointment_params)
+    @appointment.save!
+  end
+
   def destroy
   end
+
+  def show
+    @appointments = Appointment.all
+  end
+
 
   private
 
