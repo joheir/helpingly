@@ -2,6 +2,13 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     @offers = Offer.all
+    # The `geocoded` scope filters only offers with coordinates
+    @markers = @offers.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def new
