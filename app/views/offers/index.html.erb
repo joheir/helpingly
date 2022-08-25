@@ -24,7 +24,7 @@
 <div class="grid">
   <% @offers.each do |offer| %>
     <div class="g-col-md-4">
-      <%= link_to(offer_path(offer)) do %>
+      <%= link_to(offer_path(offer), class: "card-link") do %>
         <div class="card-trip">
           <% if offer.photo.attached? %>
             <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
@@ -41,3 +41,6 @@
     </div>
   <%end%>
 </div>
+
+
+
