@@ -61,3 +61,15 @@
   color: black;
   font-family: $body-font;
 }
+
+.delete-card {
+  color: rgb(199, 199, 199);
+  text-decoration: none;
+
+  .delete-card {
+    font-weight: bold;
+  }
+  &:hover {
+    color: rgb(14, 14, 14);
+  }
+}
