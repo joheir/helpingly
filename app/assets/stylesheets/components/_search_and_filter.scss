@@ -1,0 +1,59 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+/*search box css start here*/
+// .search-sec{
+//   padding: 4rem;
+// }
+
+@media (min-width: 992px){
+  .search-sec{
+      position: relative;
+      top: -114px;
+  }
+}
+
+@media (max-width: 992px){
+  .search-sec{
+    background: rgba(26, 70, 104, 0.51);
+  }
+}
+
+.search-bar {
+  display: flex;
+}
+
+.container-search {
+  width: 500px;
+  height: 40px;
+  margin: auto;
+}
+
+.filter{
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa-solid {
+  color: $greenfive;
+}
+
+.filter-icon {
+  text-align: center;
+
+  p {
+    font-size: 20px;
+    font-weight: bolder;
+    color: $greensix;
+  }
+}
