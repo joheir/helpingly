@@ -65,6 +65,10 @@
 
 .fa-solid {
   color: $greenfive;
+
+  &:hover {
+    color: $greensix;
+  }
 }
 
 .filter-icon {
@@ -75,6 +79,7 @@
     font-weight: bolder;
     color: $greensix;
   }
+
 }
 
 .carousel-caption {

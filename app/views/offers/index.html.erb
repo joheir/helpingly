@@ -60,27 +60,39 @@
   </div>
 
   <div class="pets filter-icon">
-    <i class="fa-solid fa-dog"></i>
+    <%= link_to request.params.merge(category: "Pets") do %>
+      <i class="fa-solid fa-dog"></i>
+    <% end %>
     <p>Pets</p>
   </div>
   <div class="education filter-icon">
-    <i class="fa-solid fa-book"></i>
+    <%= link_to request.params.merge(category: "Education") do %>
+      <i class="fa-solid fa-book"></i>
+    <% end %>
     <p>Education</p>
   </div>
   <div class="music filter-icon">
-    <i class="fa-solid fa-music"></i>
+    <%= link_to request.params.merge(category: "Music") do %>
+      <i class="fa-solid fa-music"></i>
+    <% end %>
     <p>Music</p>
   </div>
   <div class="art filter-icon">
-    <i class="fa-solid fa-paintbrush"></i>
-    <p>Art</p>
+    <%= link_to request.params.merge(category: "Arts") do %>
+      <i class="fa-solid fa-paintbrush"></i>
+     <% end %>
+    <p>Arts</p>
   </div>
   <div class="garden filter-icon">
-    <i class="fa-solid fa-tree"></i>
+    <%= link_to request.params.merge(category: "Garden") do %>
+      <i class="fa-solid fa-tree"></i>
+    <% end %>
     <p>Garden</p>
   </div>
   <div class="other filter-icon">
-    <i class="fa-solid fa-question"></i>
+    <%= link_to request.params.merge(category: "Other") do %>
+      <i class="fa-solid fa-question"></i>
+    <% end %>
     <p>Other</p>
   </div>
 </div>
