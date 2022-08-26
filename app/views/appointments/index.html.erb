@@ -7,9 +7,9 @@
       <th scope="col">Start Date</th>
       <th scope="col">End Date</th>
       <th scope="col">Hours</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-
+      <th scope="col">Accept</th>
+      <th scope="col">Decline</th>
+      <th scope="col">Accepted</th>
     </tr>
   </thead>
   <tbody>
@@ -21,8 +21,9 @@
           <td> <%=appointment.start_date %> </td>
           <td> <%=appointment.end_date %> </td>
           <td> <%=appointment.hours %> </td>
-          <td><button class="editbtn">Accept</button></td>
-          <td><button class="editbtn">Decline</button></td>
+          <td> <%= button_to "Accept offer", offer_appointment_path(appointment.offer, appointment), method: :put, class: "btn btn-success" %></td>
+          <td> <%= link_to "Decline offer", offer_appointment_path(appointment.offer, appointment), method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger text-light" %></td>
+          <td> <%=appointment.accepted %> </td>
         </tr>
       <% end %>
   </tbody>
