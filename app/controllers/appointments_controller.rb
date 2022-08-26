@@ -19,18 +19,28 @@ class AppointmentsController < ApplicationController
 
   def edit
     @appointment = Appointment.find(params[:id])
+    @offer = Offer.find(params[:offer_id])
   end
 
   def update
-    @appointment = Appointment.find(appointment_params)
+    @offer = Offer.find(params[:offer_id])
+    @appointment = Appointment.find(params[:id])
+    @appointment.offer = @offer
+
+    @appointment.accepted = true
     @appointment.save!
+    redirect_to user_appointments_path(current_user)
   end
 
   def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to user_appointments_path(current_user), status: :see_other
   end
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.where(user_id: current_user.id)
   end
 
   private
@@ -38,5 +48,4 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:start_date, :end_date, :hours)
   end
-
 end

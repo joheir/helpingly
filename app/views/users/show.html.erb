@@ -1,6 +1,6 @@
 <div class="page">
   <div class="left">
-    <p> <%= image_tag 'https://i.pinimg.com/550x/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg', class: "profile_pic" %> </p>
+    <p> <%= image_tag 'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60', class: "profile_pic" %> </p>
     <%= link_to(user_appointments_path(current_user), class: "card-link") do %>
       <i class="fa-solid fa-envelope"></i>
     <% end %>
@@ -25,7 +25,7 @@
                   <h2> <%= offer.title  %> </h2>
                   <p><%= offer.description.truncate(30, separator: ' ') %> </p>
                 </div>
-                <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
+                  <h2 class="card-trip-pricing">CHF <%= offer.hourly_rate  %> </h2>
               </div>
             </div>
             <div class="card-controllers">
@@ -61,7 +61,6 @@
                 <td> <%=appointment.end_date %> </td>
                 <td> <%=appointment.hours %> </td>
                 <td> <%=appointment.accepted %> </td>
-
               </tr>
             <% end %>
         </tbody>
