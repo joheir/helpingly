@@ -1,7 +1,10 @@
 <div class="page">
   <div class="left">
     <p> <%= image_tag 'https://i.pinimg.com/550x/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg', class: "profile_pic" %> </p>
-    <i class="fa-solid fa-envelope"></i>
+    <%= link_to(user_appointments_path(current_user), class: "card-link") do %>
+      <i class="fa-solid fa-envelope"></i>
+    <% end %>
+
     <div class="button">
       <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
     </div>
@@ -32,6 +35,7 @@
         </div>
       <% end %>
     </div>
+
     <div class="bookings">
       <h2> Overview of my Bookings </h2>
       <table class="table">
@@ -43,23 +47,24 @@
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
             <th scope="col">Hours</th>
+            <th scope="col">Accepted?</th>
           </tr>
         </thead>
         <tbody>
-            <% current_user.appointments.where(accepted: false).each do |appointment| %>
-            <tr>
-              <th scope="row">1</th>
-              <td> <%=appointment.offer.user.email %> </td>
-              <td> <%=appointment.offer.title %> </td>
-              <td> <%=appointment.start_date %> </td>
-              <td> <%=appointment.end_date %> </td>
-              <td> <%=appointment.hours %> </td>
-            </tr>
+            <% current_user.appointments.each do |appointment| %>
+              <tr>
+                <th scope="row">1</th>
+                <td> <%=appointment.offer.user.email %> </td>
+                <td> <%=appointment.offer.title %> </td>
+                <td> <%=appointment.start_date %> </td>
+                <td> <%=appointment.end_date %> </td>
+                <td> <%=appointment.hours %> </td>
+                <td> <%=appointment.accepted %> </td>
+
+              </tr>
             <% end %>
-          </tr>
         </tbody>
       </table>
-
     </div>
   </div>
 </div>

@@ -29,10 +29,9 @@ class AppointmentsController < ApplicationController
   def destroy
   end
 
-  def show
+  def index
     @appointments = Appointment.all
   end
-
 
   private
 
