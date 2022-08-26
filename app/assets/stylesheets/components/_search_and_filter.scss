@@ -16,27 +16,43 @@
 //   padding: 4rem;
 // }
 
+
 @media (min-width: 992px){
   .search-sec{
       position: relative;
-      top: -114px;
+      top: -58vh;
   }
 }
 
 @media (max-width: 992px){
   .search-sec{
+    display: flex;
     background: rgba(26, 70, 104, 0.51);
   }
 }
 
 .search-bar {
-  display: flex;
+  width: 500px;
+  height: 40px;
 }
 
 .container-search {
   width: 500px;
   height: 40px;
   margin: auto;
+
+  .btn-ghost {
+    margin: 0;
+  }
+}
+
+.d-flex {
+  width: 500px;
+  height: 40px;
+
+  .form-control{
+    opacity: 0.7;
+  }
 }
 
 .filter{
@@ -56,4 +72,20 @@
     font-weight: bolder;
     color: $greensix;
   }
+}
+
+.carousel-caption {
+  position: relative;
+  margin: auto 550px auto auto;
+  top: -25vh;
+  font-weight: bold;
+}
+
+.offers-text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#offers {
+  padding-top: 20px;
 }

@@ -1,4 +1,4 @@
-<section>
+<div class="section">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% @offers.each do |offer| %>
@@ -19,27 +19,29 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</section>
-<section class="search-sec">
-    <div class="container-search">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                  <div class="search-bar">
-                    <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
-                      <%= text_field_tag :query,
-                        params[:query],
-                        class: "form-control",
-                        placeholder: "Find a shitty"
-                      %>
-                      <%= submit_tag "Search", class: "btn-ghost" %>
-                    <% end %>
+
+  <section class="search-sec">
+      <div class="container-search">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="row">
+                    <div class="search-bar">
+                      <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+                        <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control",
+                          placeholder: "Get some help in your city"
+                        %>
+                          <%= submit_tag "Search", class: "btn-ghost" %>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>
+
 
 <div class="offers-section">
 <div class="filter">
@@ -52,9 +54,10 @@
   </div>
 
   <div class="sports filter-icon">
-    <i class="fa-solid fa-basketball"></i>
+      <i class="fa-solid fa-basketball"></i>
     <p>Sports</p>
   </div>
+
   <div class="pets filter-icon">
     <i class="fa-solid fa-dog"></i>
     <p>Pets</p>
@@ -81,9 +84,9 @@
   </div>
 </div>
 
-  <h1 class="offers-text">OFFERS</h1>
-
-  <div class="grid">
+  <h1 class="offers-text">Find help in your city</h1>
+  <div id="offers" class="offerrsss"></div>
+  <div class="grid" >
     <% @offers.each do |offer| %>
       <div class="g-col-md-4">
         <%= link_to(offer_path(offer), class: "card-link") do %>
