@@ -55,13 +55,16 @@
         <tbody>
             <% current_user.appointments.each do |appointment| %>
               <tr>
-                <th scope="row">1</th>
                 <td> <%=appointment.offer.user.email %> </td>
                 <td> <%=appointment.offer.title %> </td>
                 <td> <%=appointment.start_date %> </td>
                 <td> <%=appointment.end_date %> </td>
                 <td> <%=appointment.hours %> </td>
-                <td> <%=appointment.accepted %> </td>
+                <% if appointment.accepted == true %>
+                <td style="color: #475841"> Yes </td>
+                <% else %>
+                <td style="color: rgb(255, 0, 0)"> No </td>
+                <% end %>
               </tr>
             <% end %>
         </tbody>
