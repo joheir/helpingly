@@ -3,12 +3,22 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    # The `geocoded` scope filters only offers with coordinates
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
+    end
+
     if params[:query].present?
       @offers = @offers.where("location ILIKE ?", "%#{params[:query]}%")
     end
+
     if params[:category].present?
       @offers = @offers.where(category: params[:category])
     end
+
   end
 
   def new
@@ -27,6 +37,13 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @markers = Array(@offer).map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {offer: offer})
+      }
+    end
   end
 
   def destroy
@@ -36,8 +53,7 @@ class OffersController < ApplicationController
   end
 
   private
-
   def offer_params
-    params.require(:offer).permit(:title, :description, :hourly_rate, :location, :photo, :category)
+    params.require(:offer).permit(:title, :description, :hourly_rate, :location, :latitude, :longitude, :address, :photo, :category)
   end
 end

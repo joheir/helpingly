@@ -20,27 +20,28 @@
     </button>
   </div>
 
-<section class="search-sec">
-    <div class="container-search">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                  <div class="search-bar">
-                    <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
-                      <%= text_field_tag :query,
-                        params[:query],
-                        class: "form-control",
-                        placeholder: "Get some help in your city"
-                      %>
-                        <%= submit_tag "Search", class: "btn-ghost" %>
-                    <% end %>
+  <section class="search-sec">
+      <div class="container-search">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="row">
+                    <div class="search-bar">
+                      <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+                        <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control",
+                          placeholder: "Get some help in your city"
+                        %>
+                          <%= submit_tag "Search", class: "btn-ghost" %>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+              </div>
+          </div>
+      </div>
+  </section>
 </div>
+
 
 <div class="offers-section">
 <div class="filter">
