@@ -2,21 +2,22 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     @offers = Offer.all
-<<<<<<< HEAD
     # The `geocoded` scope filters only offers with coordinates
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude
       }
-=======
+    end
+
     if params[:query].present?
       @offers = @offers.where("location ILIKE ?", "%#{params[:query]}%")
     end
+
     if params[:category].present?
       @offers = @offers.where(category: params[:category])
->>>>>>> master
     end
+
   end
 
   def new
@@ -51,7 +52,6 @@ class OffersController < ApplicationController
   end
 
   private
-
   def offer_params
     params.require(:offer).permit(:title, :description, :hourly_rate, :location, :latitude, :longitude, :address, :photo, :category)
   end
