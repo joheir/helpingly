@@ -3,7 +3,6 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: transform .5s;
-
   &::after {
     position: absolute;
     top: 0;
@@ -15,12 +14,10 @@
     opacity: 0;
     z-index: -1;
   }
-
   &:hover,
   &:focus {
     transform: scale3d(1.03, 1.03, 1);
     color: black;
-
     &::after {
       opacity: 1;
     }
@@ -29,6 +26,7 @@
 
 .card-trip > img {
   height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -52,6 +50,9 @@
   align-items: flex-end;
   position: relative;
 
+  h2 {
+    text-align: left;
+  }
 }
 
 .card-link{
