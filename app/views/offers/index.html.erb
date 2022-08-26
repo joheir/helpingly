@@ -32,9 +32,7 @@
                         class: "form-control",
                         placeholder: "Get some help in your city"
                       %>
-                      <%= link_to('#offers') do %>
                         <%= submit_tag "Search", class: "btn-ghost" %>
-                      <% end %>
                     <% end %>
                   </div>
                 </div>
@@ -47,12 +45,10 @@
 <div class="offers-section">
 <div class="filter">
 
-  <div class="home filter-icon ">
-      <div>
-        <%= link_to(request.params.merge(category: "Home", anchor: "offerrsss")) do %>
-          <i class="fa-solid fa-house"></i>
-        <% end %>
-      </div>
+  <div class="home filter-icon">
+    <%= link_to request.params.merge(category: "Home") do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
     <p>Home</p>
   </div>
 
