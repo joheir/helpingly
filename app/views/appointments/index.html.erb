@@ -16,7 +16,6 @@
    <% count = 1 %>
       <% current_user.appointments.each do |appointment| %>
         <tr>
-          <th scope="row">1</th>
           <td> <%= count %> </td>
             <% count += 1 %>
           <td> <%=appointment.offer.user.email %> </td>
@@ -26,7 +25,11 @@
           <td> <%=appointment.hours %> </td>
           <td> <%= button_to "Accept offer", offer_appointment_path(appointment.offer, appointment), method: :put, class: "btn btn-success" %></td>
           <td> <%= link_to "Decline offer", offer_appointment_path(appointment.offer, appointment), method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger text-light" %></td>
-          <td> <%=appointment.accepted %> </td>
+          <% if appointment.accepted == true %>
+                <td> Yes </td>
+                <% else %>
+                <td> No </td>
+                <% end %>
         </tr>
       <% end %>
   </tbody>
