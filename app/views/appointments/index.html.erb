@@ -13,9 +13,12 @@
     </tr>
   </thead>
   <tbody>
+   <% count = 1 %>
       <% current_user.appointments.each do |appointment| %>
         <tr>
           <th scope="row">1</th>
+          <td> <%= count %> </td>
+            <% count += 1 %>
           <td> <%=appointment.offer.user.email %> </td>
           <td> <%=appointment.offer.title %> </td>
           <td> <%=appointment.start_date %> </td>
