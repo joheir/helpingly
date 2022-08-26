@@ -8,6 +8,8 @@
       <h4>
         <%= @offer.description %>
       </h4>
+        <h4>CHF <%= @offer.hourly_rate %></h4>
+        <h2>City: <%= @offer.location %></h2>
       <div class="booking">
         <%= link_to "Book", new_offer_appointment_path(@offer) %>
       </div>
@@ -31,25 +33,9 @@
       <h4><%= offer.title %></h4>
       <div type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><%= cl_image_tag offer.photo.key, height: 300, width: 520, crop: :fill %>
       </div>
+      <h4>CHF <%= @offer.hourly_rate %></h4>
+      <button class="discover-more"><%= link_to "Dicover more", user_path(current_user), class: "disc-more" %></button>
     </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><%= offer.title %></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
-                <p><%= offer.description %></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Discover more</button>
-            </div>
-          </div>
-        </div>
-      </div>
   <% end %>
 </div>
 
