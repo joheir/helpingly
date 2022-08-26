@@ -52,7 +52,7 @@ class OffersController < ApplicationController
 
   def update
     @offer = Offer.find(params[:id])
-    @offer.update(params[offer_params])
+    @offer.update(offer_params)
   end
 
   def destroy

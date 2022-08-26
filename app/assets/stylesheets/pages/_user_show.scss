@@ -8,6 +8,10 @@
   max-width:25vw;
   border-right: solid 1px rgb(128, 128, 128);
   text-align: center;
+
+  .fa-solid {
+    font-size: 100px;
+  }
 }
 
 .right {
@@ -17,10 +21,6 @@
 
 .header {
   margin-bottom: 40px;
-}
-
-.fa-solid {
-  font-size: 64px;
 }
 
 .card-category {
@@ -48,4 +48,12 @@
   width: 90%;
 }
 
+.edit-offer{
+  text-decoration: none;
+  color: rgb(199, 199, 199);
+  padding-left: 222px;
 
+  &:hover {
+    color: rgb(14, 14, 14)
+  }
+}

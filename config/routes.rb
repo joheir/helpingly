@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[show] do
     resources :appointments, only: %i[index]
   end
-  
-  resources :offers, only: %i[index new create show destroy] do
+
+  resources :offers, only: %i[index new create show destroy edit update] do
     resources :appointments, only: %i[new create destroy update edit]
   end
   # root "articles#index"

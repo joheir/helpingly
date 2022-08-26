@@ -19,7 +19,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
   <section class="search-sec">
       <div class="container-search">
           <div class="row">
@@ -54,7 +53,9 @@
   </div>
 
   <div class="sports filter-icon">
+    <%= link_to request.params.merge(category: "Sports") do %>
       <i class="fa-solid fa-basketball"></i>
+    <% end %>
     <p>Sports</p>
   </div>
 
@@ -84,7 +85,7 @@
   </div>
 </div>
 
-  <h1 class="offers-text">Find help in your city</h1>
+  <h3 class="offers-text">Find help in your city</h3>
   <div id="offers" class="offerrsss"></div>
   <div class="grid" >
     <% @offers.each do |offer| %>
@@ -99,7 +100,7 @@
                 <h2> <%= offer.title  %> </h2>
                 <p><%= offer.description.truncate(30, separator: ' ') %> </p>
               </div>
-              <h2 class="card-trip-pricing"><%= offer.hourly_rate  %> </h2>
+              <h2 class="card-trip-pricing"> CHF <%= offer.hourly_rate  %> </h2>
             </div>
           </div>
         <% end %>

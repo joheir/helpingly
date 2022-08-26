@@ -40,6 +40,7 @@
   width: 500px;
   height: 40px;
   margin: auto;
+  margin-top: 40px;
 
   .btn-ghost {
     margin: 0;
@@ -58,6 +59,8 @@
 .filter{
   display: flex;
   justify-content: space-around;
+  width: 700px;
+  margin: auto;
 }
 
 .fa-solid {
@@ -68,7 +71,7 @@
   text-align: center;
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bolder;
     color: $greensix;
   }
